@@ -1,0 +1,136 @@
+{
+  "info": {
+    "_postman_id": "b3e9a0c1-5d8f-4e2a-9b1c-8f4d2e7a1c0b",
+    "name": "Land Registration System API",
+    "description": "API collection for managing land parcels, owners, and official searches.",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Land Management",
+      "item": [
+        {
+          "name": "Register New Land",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"titleNumber\": \"KISII/BLOCK/450\",\n    \"size\": 0.5,\n    \"location\": \"Kisii Town\",\n    \"tenureType\": \"FREEHOLD\",\n    \"ownerId\": 101\n}"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/api/lands/register",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "api",
+                "lands",
+                "register"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Get Land by Title Number",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/api/lands/search?titleNumber=KISII/BLOCK/450",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "api",
+                "lands",
+                "search"
+              ],
+              "query": [
+                {
+                  "key": "titleNumber",
+                  "value": "KISII/BLOCK/450"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Update Land Details",
+          "request": {
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"currentStatus\": \"CHARGED\",\n    \"valuation\": 1500000\n}"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/api/lands/update/KISII/BLOCK/450",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "api",
+                "lands",
+                "update",
+                "KISII/BLOCK/450"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Proprietors (Owners)",
+      "item": [
+        {
+          "name": "Add Proprietor",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"fullName\": \"John Doe\",\n    \"nationalId\": \"12345678\",\n    \"kraPin\": \"A001234567Z\",\n    \"phoneNumber\": \"+254700000000\"\n}"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/api/owners",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "api",
+                "owners"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    }
+  ],
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "http://localhost:8080",
+      "type": "string"
+    }
+  ]
+}

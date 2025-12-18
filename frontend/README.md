@@ -1,70 +1,196 @@
-# Getting Started with Create React App
+# Land Registration Digital System - Frontend Client
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## 🖥️ Overview
+The **Land Registration Digital System Frontend** is a modern, responsive user interface built with **React.js**. It provides a user-friendly dashboard for Land Registrars, Surveyors, and Public users to interact with the digital land registry.
 
-## Available Scripts
+It consumes the RESTful API provided by the Spring Boot backend to perform operations like searching for title deeds, registering new parcels, and managing ownership details.
 
-In the project directory, you can run:
+## 🚀 Tech Stack
+* **Framework:** React.js (Create React App / Vite)
+* **HTTP Client:** Axios
+* **Routing:** React Router DOM
+* **Styling:** CSS3 / Bootstrap 5 / Tailwind (Adjust based on your preference)
+* **State Management:** React Hooks (useState, useEffect)
 
-### `npm start`
+## ✨ Key Features
+* **Dashboard:** At-a-glance view of total registered lands and recent activities.
+* **Land Registry:** View, sort, and filter a list of all land parcels (via `LandList.js`).
+* **Digital Search:** Search for land by Title Number (e.g., `KISII/BLOCK/450`).
+* **Registration Form:** Digital forms for capturing new land and owner details.
+* **Responsive Design:** Optimized for desktop and tablets.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+---
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## 🛠️ Getting Started
 
-### `npm test`
+### Prerequisites
+Ensure you have the following installed:
+* [Node.js](https://nodejs.org/) (v16 or higher)
+* [npm](https://www.npmjs.com/) (usually comes with Node.js)
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### 1. Clone the Repository
+```bash
+git clone [https://github.com/YourUsername/landregistry-frontend.git](https://github.com/YourUsername/land-registry-frontend.git)
+cd landregistry-frontend
+```
 
-### `npm run build`
+### 2. Install Dependencies
+Install the required node modules defined in package.json:
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+```
+npm install
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+```
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### 3. Configure Backend Connection
+Create a .env file in the root directory to store your backend URL. This ensures you don't hardcode URLs in your components.
 
-### `npm run eject`
+File: .env
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+Properties
+```
+REACT_APP_API_URL=http://localhost:8080/api
+```
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+### 4. Run the Application
+   Start the local development server:
+``` 
+npm start
+```
+The application will open in your browser at http://localhost:3000.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+### 📂 Project Structure
+```
+src/
+├── components/          # Reusable UI components
+│   ├── LandList.js      # Displays table of registered lands
+│   ├── Navbar.js        # Top navigation bar
+│   └── Footer.js        # Page footer
+├── pages/               # Main page views
+│   ├── Dashboard.js     # Home/Summary page
+│   ├── RegisterLand.js  # Form to add new land
+│   └── SearchLand.js    # Search interface
+├── services/            # API service calls
+│   └── LandService.js   # Axios configurations
+├── App.js               # Main entry point & Routing
+└── index.js             # DOM rendering
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+```
 
-## Learn More
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+Here is a professional README.md file tailored for your Frontend React Application.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+I have designed it to match the style of the backend README, ensuring your project documentation looks consistent and complete.
 
-### Code Splitting
+README.md
+Markdown
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+# Land Registry System - Frontend Client
 
-### Analyzing the Bundle Size
+## 🖥️ Overview
+The **Land Registry System Frontend** is a modern, responsive user interface built with **React.js**. It provides a user-friendly dashboard for Land Registrars, Surveyors, and Public users to interact with the digital land registry.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+It consumes the RESTful API provided by the Spring Boot backend to perform operations like searching for title deeds, registering new parcels, and managing ownership details.
 
-### Making a Progressive Web App
+## 🚀 Tech Stack
+* **Framework:** React.js (Create React App / Vite)
+* **HTTP Client:** Axios
+* **Routing:** React Router DOM
+* **Styling:** CSS3 / Bootstrap 5 / Tailwind (Adjust based on your preference)
+* **State Management:** React Hooks (useState, useEffect)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+## ✨ Key Features
+* **Dashboard:** At-a-glance view of total registered lands and recent activities.
+* **Land Registry:** View, sort, and filter a list of all land parcels (via `LandList.js`).
+* **Digital Search:** Search for land by Title Number (e.g., `KISII/BLOCK/450`).
+* **Registration Form:** Digital forms for capturing new land and owner details.
+* **Responsive Design:** Optimized for desktop and tablets.
 
-### Advanced Configuration
+---
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+## 🛠️ Getting Started
 
-### Deployment
+### Prerequisites
+Ensure you have the following installed:
+* [Node.js](https://nodejs.org/) (v16 or higher)
+* [npm](https://www.npmjs.com/) (usually comes with Node.js)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+### 1. Clone the Repository
+```
+git clone [https://github.com/YourUsername/land-registry-frontend.git](https://github.com/YourUsername/land-registry-frontend.git)
+cd land-registry-frontend
+```
+### 2. Install Dependencies
+Install the required node modules defined in package.json:
 
-### `npm run build` fails to minify
+```
+npm install
+```
+3. Configure Backend Connection
+Create a .env file in the root directory to store your backend URL. This ensures you don't hardcode URLs in your components.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+File: .env
+
+Properties
+``` 
+REACT_APP_API_URL=http://localhost:8080/api
+
+```
+
+4. Run the Application
+Start the local development server:
+
+```
+
+npm start
+```
+
+The application will open in your browser at http://localhost:3000.
+
+📂 Project Structure
+``` 
+
+src/
+├── components/          # Reusable UI components
+│   ├── LandList.js      # Displays table of registered lands
+│   ├── Navbar.js        # Top navigation bar
+│   └── Footer.js        # Page footer
+├── pages/               # Main page views
+│   ├── Dashboard.js     # Home/Summary page
+│   ├── RegisterLand.js  # Form to add new land
+│   └── SearchLand.js    # Search interface
+├── services/            # API service calls
+│   └── LandService.js   # Axios configurations
+├── App.js               # Main entry point & Routing
+└── index.js             # DOM rendering
+
+```
+### 🔌 Connecting to Backend
+If you encounter CORS errors when connecting to the Spring Boot backend (running on port 8080) from React (running on port 3000), ensure your Spring Boot Controller allows cross-origin requests:
+
+Java
+``` 
+// In your Spring Boot Controller
+@CrossOrigin(origins = "http://localhost:3000")
+@RestController
+@RequestMapping("/api/lands")
+public class LandController { ... }
+
+```
+
+### 📸 Screenshots
+Landing page
+
+![img.png](img.png)
+
+Signup page
+![img_1.png](img_1.png)
+
+User Dashboard
+![img_2.png](img_2.png)
+
+Officer Dashboard
+![img_3.png](img_3.png)
+
+Admin Dashboard
+![img_4.png](img_4.png)

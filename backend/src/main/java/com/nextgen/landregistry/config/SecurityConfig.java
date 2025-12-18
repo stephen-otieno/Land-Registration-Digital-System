@@ -18,15 +18,21 @@ public class SecurityConfig {
     @Bean
     public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
         http
-                .csrf(csrf -> csrf.disable()) // Disable CSRF for development
-                .cors(withDefaults()) // Enable CORS using the bean below
-                .headers(headers -> headers.frameOptions(frame -> frame.disable())) // Allow H2 Console
+                // 1. Disable CSRF (Common cause of 401s in POST requests)
+                .csrf(csrf -> csrf.disable())
+
+                // 2. Configure CORS (To allow React to talk to Java)
+                .cors(withDefaults())
+
+                // 3. Allow H2 Console to display frames
+                .headers(headers -> headers.frameOptions(frame -> frame.disable()))
+
+                // 4. THE CRITICAL PART: Allow ALL API requests
                 .authorizeHttpRequests(auth -> auth
-                        .requestMatchers("/h2-console/**").permitAll() // Allow Database Console
-                        .requestMatchers("/api/**").permitAll()        // Allow All API endpoints (Register/Login)
-                        .anyRequest().authenticated()
-                )
-                .httpBasic(withDefaults());
+                        .requestMatchers("/h2-console/**").permitAll() // Allow Database
+                        .requestMatchers("/api/**").permitAll()        // <--- THIS MUST BE permitAll()
+                        .anyRequest().permitAll()                      // Allow everything else for now (Dev Mode)
+                );
 
         return http.build();
     }
@@ -36,16 +42,14 @@ public class SecurityConfig {
         UrlBasedCorsConfigurationSource source = new UrlBasedCorsConfigurationSource();
         CorsConfiguration config = new CorsConfiguration();
 
-        // 1. Allow your React Frontend
+        // Allow your React Frontend
         config.setAllowedOrigins(List.of("http://localhost:3000"));
 
-        // 2. Allow all HTTP methods (GET, POST, etc.)
+        // Allow all standard methods
         config.setAllowedMethods(List.of("GET", "POST", "PUT", "DELETE", "OPTIONS"));
 
-        // 3. Allow all headers (Content-Type, Authorization, etc.)
+        // Allow all headers
         config.setAllowedHeaders(List.of("*"));
-
-        // 4. Allow credentials (cookies/auth headers)
         config.setAllowCredentials(true);
 
         source.registerCorsConfiguration("/**", config);
