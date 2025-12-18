@@ -1,7 +1,7 @@
-# Land Registry Management System (Kisii County Context)
+# Land Registration Digital System 
 
 ## 📖 Project Overview
-The **Land Registry Management System** is a full-stack digital solution designed to modernize land administration. It addresses challenges in manual record-keeping by providing a secure, efficient, and transparent platform for managing land parcels, title deeds, and ownership records.
+The **Land Registration Digital System** is a full-stack digital solution designed to modernize land administration. It addresses challenges in manual record-keeping by providing a secure, efficient, and transparent platform for managing land parcels, title deeds, and ownership records.
 
 This system is built to reflect the workflows of the **Kenyan Land Registration Act**, supporting features like official searches, title transfers, and encumbrance management (caveats/charges).
 
